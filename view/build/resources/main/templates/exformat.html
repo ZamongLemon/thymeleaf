@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul th:each="datas : ${lists}">
+    <li>[[${#numbers.formatInteger(datas.idx,5)}]]</li>
+    <li>[[${#temporals.format(datas.regTime,'yyyy/MM/dd')}]]</li>
+</ul>
+</body>
+</html>

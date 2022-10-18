@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul th:each="datas : ${lists}">
+    <li>[[${datas.regTime}]]</li>
+</ul>
+
+<ul >
+    <li th:each="vo,state: ${lists}" th:if="${vo.idx %3==0}">[[${state.index}]] [[${vo}]]</li>
+</ul>
+
+<ul >
+    <li th:each="vo,state: ${lists}" >
+        <span th:if="${vo.idx %3 ==0}">[[${vo.email}]]</span>
+        <span th:unless="${vo.idx %3 ==0}">[[${vo.name}]]</span>
+    </li>
+</ul>
+
+<ul >
+    <li th:each="vo,state: ${lists}" >
+        <a th:href="@{/exview}">[[${vo.idx}]]</a>
+        <span th:if="${vo.idx %3 ==0}">[[${vo.email}]]</span>
+        <span th:unless="${vo.idx %3 ==0}">[[${vo.name}]]</span>
+    </li>
+</ul>
+
+
+
+</body>
+</html>
